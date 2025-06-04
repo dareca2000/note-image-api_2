@@ -11,7 +11,7 @@ export default async function handler(req, res) {
   try {
     const imagePath = path.join(__dirname, '..', 'public', 'base.png');
     const image = await Jimp.read(imagePath);
-    const font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
+    const font = await Jimp.loadFont(Jimp.FONT_SANS_32_BLACK);
     image.print(font, 50, 400, `更新日: ${date}`);
 
     const buffer = await image.getBufferAsync(Jimp.MIME_PNG);
